@@ -1,20 +1,18 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const config = {
   entry: './app/index.js',
   output: {
     filename: 'bundle.js',
-    publicPath: '/public',
+    publicPath: '/public'
   },
   module: {
     rules: [
-      { 
-        test: /\.js$/, 
+      {
+        test: /\.js$/,
         use: 'babel-loader',
         exclude: /(node_modules)/
-      },
+      }
     ]
   },
   plugins: [
@@ -23,8 +21,8 @@ const config = {
   devServer: {
     port: 8000,
     compress: true,
-    inline: true,
+    inline: true
   }
 }
 
-module.exports = config;
+module.exports = config

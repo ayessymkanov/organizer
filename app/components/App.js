@@ -6,7 +6,7 @@ import NotesContainer from './sections/notes/NotesContainer'
 import CalendarContainer from './sections/calendar/CalendarContainer'
 import ExpensesContainer from './sections/expenses/ExpencesContainer'
 
-import resetStyles from '../globalStyles';
+import resetStyles from '../globalStyles'
 
 const AppContainer = styled.div`
   display: flex;
