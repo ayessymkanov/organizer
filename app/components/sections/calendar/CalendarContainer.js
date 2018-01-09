@@ -1,7 +1,12 @@
 import React from 'react'
+import { Section } from '../../shared/components'
 
 export default class CalendarContainer extends React.Component {
   render () {
-    return <div>Calendar</div>
+    return (
+      <Section>
+        <span>Calendar</span>
+      </Section>
+    ) 
   }
 }

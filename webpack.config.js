@@ -21,7 +21,8 @@ const config = {
   devServer: {
     port: 8000,
     compress: true,
-    inline: true
+    inline: true,
+    hot: true
   }
 }
 
