@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Header from './NoteHeader'
 
 const Note = styled.div`
   flex: 1;
@@ -8,6 +9,11 @@ const Note = styled.div`
 
 export default class Component extends React.Component {
   render () {
-    return <Note>Note content</Note>
+    return (
+      <Note>
+        <Header />
+        <textarea></textarea>
+      </Note>
+    )
   }
 }
