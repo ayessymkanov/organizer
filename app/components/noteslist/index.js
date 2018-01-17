@@ -4,7 +4,8 @@ import NoteItem from '../noteItem'
 
 const NotesContainer = styled.div`
   width: 360px;
-  border: 1px solid white;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
 `
 
 export default class Component extends React.Component {

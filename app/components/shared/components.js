@@ -5,5 +5,4 @@ export const Container =  styled.div`
   max-width: 100%;
   display: flex;
   margin: 0 auto;
-  background-color: green;
 `
