@@ -3,8 +3,16 @@ import styled from 'styled-components'
 import Header from './NoteHeader'
 
 const Note = styled.div`
+  display: flex;
+  flex-direction: column;
   flex: 1;
-  border: 1px solid red;
+`
+
+const NoteContent = styled.textarea`
+  flex: 1;
+  width: 100%;
+  resize: none;
+  font-size: 100%;
 `
 
 export default class Component extends React.Component {
@@ -12,7 +20,7 @@ export default class Component extends React.Component {
     return (
       <Note>
         <Header />
-        <textarea></textarea>
+        <NoteContent value="hello world" />
       </Note>
     )
   }
