@@ -12,7 +12,16 @@ const config = {
         test: /\.js$/,
         use: 'babel-loader',
         exclude: /(node_modules)/
-      }
+      },
+      {
+        test: /\.js$/,
+        enforce: 'pre',
+        use: 'standard-loader',
+        exclude: /(node_modules)/,
+        options: {
+          parser: 'babel-eslint'
+        }
+      },
     ]
   },
   plugins: [

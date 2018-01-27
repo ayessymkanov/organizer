@@ -5,7 +5,6 @@ const Header = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
-  border: 1px solid black;
 `
 const NoteTitle = styled.div`
 
