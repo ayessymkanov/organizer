@@ -6,7 +6,6 @@ import Note from './note'
 
 import resetStyles from '../globalStyles'
 
-
 export default () => {
   resetStyles()
   return (

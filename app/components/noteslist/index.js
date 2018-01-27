@@ -9,13 +9,13 @@ const NotesContainer = styled.div`
 `
 
 export default class Component extends React.Component {
-  render() {
+  render () {
     return (
       <NotesContainer>
         <NoteItem />
         <NoteItem />
         <NoteItem />
       </NotesContainer>
-    ) 
+    )
   }
 }

@@ -21,7 +21,7 @@ const config = {
         options: {
           parser: 'babel-eslint'
         }
-      },
+      }
     ]
   },
   plugins: [

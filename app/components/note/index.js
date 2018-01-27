@@ -19,7 +19,7 @@ const NoteContent = styled.textarea`
 `
 
 export default class Component extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       value: ''

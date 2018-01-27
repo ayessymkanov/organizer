@@ -23,6 +23,6 @@ export default class Component extends React.Component {
         <NoteTitle>Note title</NoteTitle>
         <NoteDescription>note short description asdkjans asdnkas asdnkjansdjk najsnd jkan</NoteDescription>
       </NoteItem>
-    ) 
+    )
   }
 }
