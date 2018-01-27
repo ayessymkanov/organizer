@@ -16,12 +16,13 @@ const NoteDescription = styled.div`
   text-overflow: ellipsis;
 `
 
-export default class Component extends React.Component {
+export default class Component extends React.PureComponent {
   render () {
+    const { note } = this.props
     return (
       <NoteItem>
-        <NoteTitle>Note title</NoteTitle>
-        <NoteDescription>note short description asdkjans asdnkas asdnkjansdjk najsnd jkan</NoteDescription>
+        <NoteTitle>{note.title}</NoteTitle>
+        <NoteDescription>{note.desc}</NoteDescription>
       </NoteItem>
     )
   }

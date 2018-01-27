@@ -1,5 +1,5 @@
 const addNote = 'addNote'
-const INITIAL_STATE = []
+const INITIAL_STATE = [{id: 1, title: 'hello', desc: 'world'}]
 
 export const addNoteAction = (payload) => {
   return {
