@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from './shared/components'
-import NotesList from './noteslist'
-import Note from './note'
+import NotesList from './noteslist/NoteList'
+import Note from './note/Note'
 
 import resetStyles from '../globalStyles'
 

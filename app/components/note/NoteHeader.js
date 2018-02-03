@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header, ControlButtons, NoteContent, NoteTitle, NoteDescription } from './styles'
+import { Header, ControlButtons, NoteHeaderContent, NoteTitle, NoteDescription } from './styles'
 
 export default class Component extends React.Component {
   constructor(props) {
@@ -23,10 +23,10 @@ export default class Component extends React.Component {
   renderNoteContent = () => {
     const { editing } = this.state
     return (
-      <NoteContent>
+      <NoteHeaderContent>
         <NoteTitle value="Untitled" disabled={!editing} />
         <NoteDescription value="Note description" disabled={!editing} />
-      </NoteContent>
+      </NoteHeaderContent>
     )
   }
 
