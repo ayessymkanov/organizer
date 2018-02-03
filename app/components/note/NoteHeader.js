@@ -1,5 +1,13 @@
 import React from 'react'
-import { Header, ControlButtons, NoteHeaderContent, NoteTitle, NoteDescription } from './styles'
+import * as Icon from 'react-icons/lib/ti'
+import { 
+  Header,
+  ControlButtons, 
+  IconWrapper,
+  NoteHeaderContent,
+  NoteTitle,
+  NoteDescription
+} from './styles'
 
 export default class Component extends React.Component {
   constructor (props) {
@@ -43,9 +51,21 @@ export default class Component extends React.Component {
     const { editing } = this.state
     return (
       <ControlButtons>
-        {!editing && <button onClick={() => this.setState({ editing: !editing})}>edit</button>}
-        {editing && <button onClick={this.handleCancel}>cancel</button>}
-        {editing && <button onClick={this.submitEdit}>save</button>}
+        {!editing && 
+          <IconWrapper data-tooltip="edit">
+            <Icon.TiPencil color="#aaa" onClick={() => this.setState({ editing: !editing})} />
+          </IconWrapper>
+        }
+        {editing && 
+          <IconWrapper data-tooltip="cancel">
+            <Icon.TiTimes color="#aaa" onClick={this.handleCancel} />
+          </IconWrapper>
+        }
+        {editing && 
+          <IconWrapper data-tooltip="save">
+            <Icon.TiTick color="#aaa" onClick={this.submitEdit} />
+          </IconWrapper>
+        }
       </ControlButtons>
     )
   }

@@ -3,7 +3,7 @@ import _ from 'lodash'
 import { connect } from 'react-redux'
 import Header from './NoteHeader'
 import { editNote } from '../../actions/notesListActions'
-import { Note, NoteContent } from './styles'
+import { Note, NoteContent, NoNote } from './styles'
 
 const mapStateToProps = ({ notesList }) => {
   const { selectedNoteId, notes } = notesList
@@ -25,7 +25,7 @@ class Component extends React.Component {
     const { note, editNote } = this.props
     const { title, desc, id } = note
     if (_.isEmpty(note)) {
-      return null
+      return <NoNote>No note is selected :(</NoNote>
     }
     return (
       <Note>

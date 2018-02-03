@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const NotesContainer = styled.div`
   position: relative;
   width: 360px;
+  min-width: 360px;
   height: 100%;
   overflow: scroll;
   border-left: 1px solid #ccc;
