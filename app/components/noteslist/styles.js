@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import colors from '../shared/colors'
 
 export const NotesContainer = styled.div`
   position: relative;
@@ -19,7 +20,7 @@ export const AddNoteButton = styled.button`
   margin: 0;
   border: none;
   font-size: 100%;
-  background-color: orange;
+  background-color: ${colors.orange};
   outline: none;
   color: white;
   cursor: pointer;

@@ -1,10 +1,11 @@
 import styled from 'styled-components'
+import colors from '../shared/colors'
 
 export const NoteItem = styled.div`
   padding: 0.5rem;
   border-bottom: 1px solid #ccc;
   border-right: 5px solid;
-  border-right-color: ${props => props.selected ? 'black' : 'transparent'};
+  border-right-color: ${props => props.selected ? colors.green : 'transparent'};
 `
 export const NoteTitle = styled.span`
   display: block;
