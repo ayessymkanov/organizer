@@ -1,9 +1,9 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import logger from 'redux-logger'
-import NotesListReducer from './reducers/NotesListReducer'
+import notesList from './reducers/notesList'
 
 const reducer = combineReducers({
-  notesList: NotesListReducer
+  notesList
 })
 
 const store = createStore(reducer, {}, applyMiddleware(logger))
