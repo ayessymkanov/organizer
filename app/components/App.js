@@ -1,5 +1,6 @@
 import React from 'react'
-import { Container } from './shared/components'
+import { Container, AppContainer } from './shared/components'
+import Navigation from './nav/Navigation' 
 import NotesList from './noteslist/NotesList'
 import Note from './note/Note'
 
@@ -9,8 +10,11 @@ export default () => {
   resetStyles()
   return (
     <Container>
-      <NotesList />
-      <Note />
+      <Navigation />
+      <AppContainer>
+        <NotesList />
+        <Note />
+      </AppContainer>
     </Container>
   )
 }

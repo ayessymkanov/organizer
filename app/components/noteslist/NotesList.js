@@ -6,8 +6,8 @@ import { addNote, selectNote } from '../../actions/notesListActions'
 import { NotesContainer, AddNoteButton } from './styles'
 
 const mapStateToProps = ({ notesList }) => {
-  const { notes } = notesList;
-  return { notes };
+  const { notes, selectedNoteId } = notesList;
+  return { notes, selectedNoteId };
 }
 
 class Component extends React.Component {
@@ -19,10 +19,10 @@ class Component extends React.Component {
     }
   }
   render () {
-    const { notes, addNote, selectNote } = this.props
+    const { notes, addNote, selectNote, selectedNoteId } = this.props
     return (
       <NotesContainer>
-        {notes.map(note => <NoteItem key={note.id} note={note} selectNote={selectNote} />)}
+        {notes.map(note => <NoteItem key={note.id} note={note} selectedNoteId={selectedNoteId} selectNote={selectNote} />)}
         <AddNoteButton onClick={() => addNote(this.state)}>new note</AddNoteButton>
       </NotesContainer>
     )

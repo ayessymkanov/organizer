@@ -13,6 +13,7 @@ export const NoteContent = styled.textarea`
   resize: none;
   font-size: 100%;
   outline: none;
+  border: none;
 `
 
 export const Header = styled.div`

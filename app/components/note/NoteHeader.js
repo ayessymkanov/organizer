@@ -16,7 +16,8 @@ export default class Component extends React.Component {
     this.setState({
       id: nextProps.noteId,
       title: nextProps.noteTitle,
-      desc: nextProps.noteDesc
+      desc: nextProps.noteDesc,
+      editing: false
     })
   }
 

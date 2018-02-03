@@ -32,8 +32,17 @@ class Component extends React.Component {
     } 
     return (
       <Note>
-        <Header noteId={id} noteTitle={title} noteDesc={desc} editNote={editNote} />
-        <NoteContent value={this.state.value} onChange={this.onChange} />
+        <Header 
+          noteId={id}
+          noteTitle={title}
+          noteDesc={desc}
+          editNote={editNote}
+        />
+        <NoteContent
+          value={this.state.value}
+          onChange={this.onChange}
+          placeholder="Start typing..."
+        />
       </Note>
     )
   }

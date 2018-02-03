@@ -2,7 +2,11 @@ import uuidv4 from 'uuid/v4'
 import { ADD_NOTE, SELECT_NOTE, EDIT_NOTE } from '../actionTypes'
 
 const INITIAL_STATE = {
-  notes: [],
+  notes: [
+    {id: 1, title: 'note1 ajksdnjkasndj najsdn jkasnd  ajsdnjkansdjkna jksnd jknasjkdn jkasnd ', desc: 'note1 desc'},
+    {id: 2, title: 'note2', desc: 'note2 desc'},
+    {id: 3, title: 'note3', desc: 'note3 desc'}
+  ],
   selectedNoteId: ''
 }
 
