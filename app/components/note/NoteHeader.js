@@ -5,8 +5,37 @@ export default class Component extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      editing: false
+      editing: false,
+      id: props.noteId,
+      title: props.noteTitle,
+      desc: props.noteDesc
     }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      id: nextProps.noteId,
+      title: nextProps.noteTitle,
+      desc: nextProps.noteDesc
+    })
+  }
+
+  cancel = () => {
+    this.setState({
+      editing: !this.state.editing,
+      title: this.props.noteTitle,
+      desc: this.props.noteDesc 
+    })
+  }
+
+  submitEdit = () => {
+    const { id, title, desc } = this.state
+    this.setState({  editing: !this.state.editing })
+    this.props.editNote({ id, title, desc })
+  }
+
+  handleEdit = (e) => {
+    this.setState({ [e.target.name]: e.target.value })
   }
 
   renderControlButtons = () => {
@@ -14,18 +43,28 @@ export default class Component extends React.Component {
     return (
       <ControlButtons>
         {!editing && <button onClick={() => this.setState({ editing: !editing})}>edit</button>}
-        {editing && <button onClick={() => this.setState({ editing: !editing })}>cancel</button>}
-        {editing && <button>save</button>}
+        {editing && <button onClick={this.cancel}>cancel</button>}
+        {editing && <button onClick={this.submitEdit}>save</button>}
       </ControlButtons>
     )
   }
 
   renderNoteContent = () => {
-    const { editing } = this.state
+    const { editing, title, desc } = this.state
     return (
       <NoteHeaderContent>
-        <NoteTitle value="Untitled" disabled={!editing} />
-        <NoteDescription value="Note description" disabled={!editing} />
+        <NoteTitle 
+          value={title}
+          name="title"
+          disabled={!editing} 
+          onChange={this.handleEdit}
+        />
+        <NoteDescription
+          value={desc}
+          name="desc"
+          disabled={!editing}
+          onChange={this.handleEdit}
+        />
       </NoteHeaderContent>
     )
   }
