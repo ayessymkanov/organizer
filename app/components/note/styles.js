@@ -71,15 +71,17 @@ export const NoteHeaderContent = styled.div`
 `
 const HeaderInput = styled.input`
   width: auto;
-  border-color: transparent;
   outline: none;
+  font-size: 0.8rem;
+  border: none;
+  border-bottom: 1px solid #aaa;
   
   &:disabled {
     color: black;
+    border-color: transparent;
   }
 `
 export const NoteTitle = styled(HeaderInput)`
- 
 `
 export const NoteDescription = styled(HeaderInput)`
   
