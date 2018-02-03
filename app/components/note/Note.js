@@ -1,7 +1,6 @@
 import React from 'react'
 import _ from 'lodash'
-import styled from 'styled-components'
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 import Header from './NoteHeader'
 import { editNote } from '../../actions/notesListActions'
 import { Note, NoteContent } from './styles'
@@ -12,8 +11,6 @@ const mapStateToProps = ({ notesList }) => {
   return { note }
 }
 
-const mapDispatchToProps = () => ({ editNote })
- 
 class Component extends React.Component {
   constructor (props) {
     super(props)
@@ -21,18 +18,18 @@ class Component extends React.Component {
       value: ''
     }
   }
-  onChange = (e) => {
+  handleChange = (e) => {
     this.setState({ value: e.target.value })
   }
   render () {
-    const { note, editNote } = this.props 
+    const { note, editNote } = this.props
     const { title, desc, id } = note
     if (_.isEmpty(note)) {
       return null
-    } 
+    }
     return (
       <Note>
-        <Header 
+        <Header
           noteId={id}
           noteTitle={title}
           noteDesc={desc}
@@ -40,8 +37,8 @@ class Component extends React.Component {
         />
         <NoteContent
           value={this.state.value}
-          onChange={this.onChange}
-          placeholder="Start typing..."
+          onChange={this.handleChange}
+          placeholder='Start typing...'
         />
       </Note>
     )

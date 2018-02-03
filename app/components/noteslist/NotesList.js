@@ -1,17 +1,16 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import uuidv4 from 'uuid/v4'
 import NoteItem from '../noteItem/NoteItem'
 import { addNote, selectNote } from '../../actions/notesListActions'
 import { NotesContainer, AddNoteButton } from './styles'
 
 const mapStateToProps = ({ notesList }) => {
-  const { notes, selectedNoteId } = notesList;
-  return { notes, selectedNoteId };
+  const { notes, selectedNoteId } = notesList
+  return { notes, selectedNoteId }
 }
 
 class Component extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       title: 'Untitled',

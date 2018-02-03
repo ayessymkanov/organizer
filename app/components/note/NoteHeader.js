@@ -2,7 +2,7 @@ import React from 'react'
 import { Header, ControlButtons, NoteHeaderContent, NoteTitle, NoteDescription } from './styles'
 
 export default class Component extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       editing: false,
@@ -12,7 +12,7 @@ export default class Component extends React.Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps (nextProps) {
     this.setState({
       id: nextProps.noteId,
       title: nextProps.noteTitle,
@@ -21,17 +21,17 @@ export default class Component extends React.Component {
     })
   }
 
-  cancel = () => {
+  handleCancel = () => {
     this.setState({
       editing: !this.state.editing,
       title: this.props.noteTitle,
-      desc: this.props.noteDesc 
+      desc: this.props.noteDesc
     })
   }
 
   submitEdit = () => {
     const { id, title, desc } = this.state
-    this.setState({  editing: !this.state.editing })
+    this.setState({ editing: !this.state.editing })
     this.props.editNote({ id, title, desc })
   }
 
@@ -44,7 +44,7 @@ export default class Component extends React.Component {
     return (
       <ControlButtons>
         {!editing && <button onClick={() => this.setState({ editing: !editing})}>edit</button>}
-        {editing && <button onClick={this.cancel}>cancel</button>}
+        {editing && <button onClick={this.handleCancel}>cancel</button>}
         {editing && <button onClick={this.submitEdit}>save</button>}
       </ControlButtons>
     )
@@ -54,15 +54,15 @@ export default class Component extends React.Component {
     const { editing, title, desc } = this.state
     return (
       <NoteHeaderContent>
-        <NoteTitle 
+        <NoteTitle
           value={title}
-          name="title"
-          disabled={!editing} 
+          name='title'
+          disabled={!editing}
           onChange={this.handleEdit}
         />
         <NoteDescription
           value={desc}
-          name="desc"
+          name='desc'
           disabled={!editing}
           onChange={this.handleEdit}
         />

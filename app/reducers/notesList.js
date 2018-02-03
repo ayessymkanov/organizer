@@ -25,7 +25,7 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         selectedNoteId: payload
-      } 
+      }
     }
     case EDIT_NOTE: {
       const { id, title, desc } = payload

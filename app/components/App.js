@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, AppContainer } from './shared/components'
-import Navigation from './nav/Navigation' 
+import Navigation from './nav/Navigation'
 import NotesList from './noteslist/NotesList'
 import Note from './note/Note'
 
